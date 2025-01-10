@@ -1,0 +1,102 @@
+services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: globetrek
+      MONGO_INITDB_ROOT_PASSWORD: DAdSplWdD_2024
+      MONGO_INITDB_DATABASE: globetrek
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: globetrek
+      ME_CONFIG_MONGODB_ADMINPASSWORD: DAdSplWdD_2024
+      ME_CONFIG_MONGODB_URL: mongodb://globetrek:DAdSplWdD_2024@mongo:27017/
+      ME_CONFIG_BASICAUTH: 'false'
+    networks:
+      - app-network
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    restart: always
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/globetrek
+    ports:
+      - "8002:8002"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    environment:
+      BACK_BASE_URL: http://backend:8002
+      API_BASE_URL: http://nodeapi:8080
+    ports:
+      - "8889:8889"
+    networks:
+      - app-network
+
+  globetrek:
+    build:
+      context: ./globetrek
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  nodeapi:
+    build:
+      context: ./nodeAPI
+      dockerfile: Dockerfile
+    environment:
+      OLLAMA_URL: http://ollama:11434
+      MONGO_URI: mongodb://globetrek:DAdSplWdD_2024@mongo:27017/globetrek?authSource=admin
+    ports:
+      - "3001:8080"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+  mongo-data:
