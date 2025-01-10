@@ -1,0 +1,7 @@
+{
+    "web": {
+        "client_id":"1025211904925-rech80f21a0lepnkpb57al40a19rm3fv.apps.googleusercontent.com",
+        "client_secret":"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",
+        "redirect_uris": ["http://localhost:3000"]
+    }
+}

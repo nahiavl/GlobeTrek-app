@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.css-1lwhjos-MuiPaper-root-MuiDrawer-paper , .css-1ygil4i-MuiToolbar-root {
+  background-color: rgb(245, 250, 253) !important;
+}
+
+.css-1lwhjos-MuiPaper-root-MuiDrawer-paper {
+  border-right: 0px !important;
+}
+
+.css-5lnhk4-MuiTypography-root {
+  color: black;
+}
+
+.MuiAppBar-root {
+  box-shadow: none !important;
+}
+
+.css-5lnhk4-MuiTypography-root {
+  font-size: 2.25rem !important;
+}
+
+.css-dca0j9-MuiDrawer-docked {
+  width: 0 !important;
+}
+
+.css-5c1adp-MuiContainer-root {
+  width: none !important;
+  margin-left:0 !important;
+  box-sizing: none !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+@media (min-width: 1200px) {
+  .css-5c1adp-MuiContainer-root {
+      max-width: none !important;
+  }
+}
+*, *::before, *::after {
+  box-sizing: none !important;
+}
+
+.css-10k6kt0, .css-zxdg2z, .css-4pwngg  {
+  padding: 0 !important;
+}
+
+.css-4pwngg {
+  justify-content: initial !important;
+}
+
+.css-k008qs {
+  display: initial !important;
+}
+
+.css-4pwngg , .css-1l4w6pd {
+  padding-top:  2vw;
+  padding-left: 4vw;
+}
+
+.css-1bv5yfe-MuiTypography-root, .css-100ek8v-MuiButtonBase-root-MuiButton-root {
+  color: black !important;
+}
+
+text.highcharts-credits{
+  display: none;
+}
+
+g.highcharts-legend.highcharts-no-tooltip > g > g > g {
+  display: none;
+}
+
+@media all and (min-width: 321px) and (max-width: 959px) {
+  #root > div > div > div > div.MuiBox-root.css-190zcm4 > div:nth-child(2) {
+    width: 35% !important;
+  }
+
+  #root > div > div > div > main {
+    margin-top: 5%;
+  }
+
+  #root > div > div > div {
+    margin-left: 10%;
+  }
+}
+
+@media all and (min-width: 620px) and (max-width: 768px) {
+  #root > div > div > div > div.MuiBox-root.css-190zcm4 > div:nth-child(2) {
+    width: 35% !important;
+  }
+
+  #root > div > div > div > main {
+    margin-top: 5%;
+  }
+
+  #root > div > div > div {
+    margin-left: 10%;
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 619px) {
+  #root > div > div > div > div.MuiBox-root.css-190zcm4 > div:nth-child(2) {
+    width: 35% !important;
+  }
+
+  #root > div > div > div > main {
+    margin-top: 10%;
+  }
+
+  #root > div > div > div {
+    margin-left: 15%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  #root > div > div > div > div.MuiBox-root.css-0 > div > div {
+    width: 12%;
+  }
+
+  #root > div > div > div > div.MuiBox-root.css-0 > header > div > div > img {
+    width: 60%;
+  }
+  #root > div > div > div > div.MuiBox-root.css-0 > header > div > button {
+    margin: 0;
+  }
+  #root > div > div > div > div.MuiBox-root.css-0 > header > div > div > div > button:nth-child(2) > svg {
+    width: 80%;
+  }
+  #root > div > div > div > div.MuiBox-root.css-0 > header > div > div > div > button:nth-child(1) {
+    width: 50%;
+  }
+
+  #root > div > div > div > main {
+    margin-top: 10%;
+  }
+
+  #root > div > div > div {
+    margin-left: 15%;
+  }
+
+  #root > div > div > div > div.MuiBox-root.css-190zcm4 {
+    display: contents;
+    height: auto;
+  }
+
+  #root > div > div > div > div.MuiBox-root.css-190zcm4 > div:nth-child(1) {
+    width: 100%;
+    height: 50vh !important;
+  }
+
+  #root > div > div > div > div.MuiBox-root.css-190zcm4 > div:nth-child(2) {
+    width: 100% !important;
+  }
+}
